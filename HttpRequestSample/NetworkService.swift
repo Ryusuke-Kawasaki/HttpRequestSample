@@ -11,7 +11,7 @@ import UIKit
 class NetworkService: NSObject {
     weak var delegate:JSONParserDelegate?
     
-    private func responseJSON(_ data:Data?,res:URLResponse?,error:Error?){
+    private func responseJSON(data:Data?,res:URLResponse?,error:Error?){
         if let jsonData = data {
             do {
                 //NSDataをJSON形式に変換。JSON形式のデータはNSDictionaryとして扱う
@@ -23,7 +23,7 @@ class NetworkService: NSObject {
                 person.age = json["age"] as! Int
                 //通知処理
                 if let d = delegate {
-                    d.didParse(person)
+                    d.didParse(person: person)
                 }
             } catch  {
                 

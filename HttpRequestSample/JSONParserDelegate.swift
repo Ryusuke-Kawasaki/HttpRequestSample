@@ -9,7 +9,7 @@
 import Foundation
 
 protocol JSONParserDelegate : class {
-    func didParse(_ person:Person)
+    func didParse(person:Person)
 }
 
 
